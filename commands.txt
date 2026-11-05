@@ -204,3 +204,29 @@ Example prompt:
 "What does chmod 400 mean? Is it like user permission?" but I usually use Chinese to aks questions, this is a translation.
 
 No AI agent ran commands for me. I ran all commands myself.
+
+
+bonus: 
+
+~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03/rag  on main !1 ------- took 19s  base py  at 06:48:27 PM 
+> python3 rag.py
+Chunks stored: 132
+Your question: How big is the llama3.2:1b download?    
+Sources: [{'file': 'lecture-12-readme.md'}, {'file': 'lecture-12-readme.md'}, {'file': 'lecture-11-readme.md'}]
+Similarity: 0.63
+Similarity: 0.59
+Similarity: 0.55
+The download size for the `llama3.2:1b` model is 1.3 GB.
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03/rag  on main !1 ------- took 20s  base py  at 06:49:03 PM 
+> python3 rag.py
+Chunks stored: 132
+Your question: Who won the 2022 World Cup?
+Sources: [{'file': 'lecture-11-readme.md'}, {'file': 'course-readme.md'}, {'file': 'lecture-10-readme.md'}]
+Similarity: 0.23
+Similarity: 0.22
+Similarity: 0.22
+There is no information about the 2022 World Cup in the given text. The text only mentions the downloaded R files from Harvard Dataverse, but does not provide any information about the outcome of a soccer tournament.
+
+
+retriever returns the 3 most similar chunks even when the question is not relevant to the documents, and the low similarity scores (0.22–0.23) show that the retrieved chunks are not closely related to the World Cup question.
