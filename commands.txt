@@ -158,4 +158,44 @@ It failed because of the reason: length. So I changed the line max_tokens=15 to 
 
 git add ollama/
 git add commands.txt
+git commit -m "Add Python calls"
+git push
 
+Q10. 
+
+chmod 400 ../ds350.pem
+
+ssh -i ../ds350.pem ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com
+
+Remote shell prompt:
+ubuntu@ip-172-31-23-98:~$
+
+
+Q11.
+sudo apt update
+sudo apt install python3-pandas python3-matplotlib python3-seaborn
+
+Q12. 
+cd ~/Desktop/Emory/"大三上26 fall"/"datasci 350"/datasci350-quiz03
+scp -i "/Users/cynthia/Desktop/Emory/大三上26 fall/datasci 350/ds350.pem" aws/traffic_analysis.py aws/website_traffic.txt ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~
+
+
+Q14. 
+scp -i "/Users/cynthia/Desktop/Emory/大三上26 fall/datasci 350/ds350.pem" ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~/results.txt ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~/fingerprint.txt ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~/traffic_analysis.png aws/
+results.txt                                                                           100%  291     4.6KB/s   00:00    
+fingerprint.txt                                                                       100%   78     1.2KB/s   00:00    
+traffic_analysis.png              
+
+
+Q15. 
+When I stop an EC2 instance, I no longer pay for it to run, but there is still a storage charge. So when I finish the analysis, I should terminate it.
+
+
+AI disclosure:
+
+I used ChatGPT to help me check my commands, fix errors, and improve my written answers in Tasks 1–15.
+
+Example prompt:
+"What does chmod 400 mean? Is it like user permission?" but I usually use Chinese to aks questions, this is a translation. 
+
+No AI agent ran commands for me. I ran all commands myself.
