@@ -102,3 +102,60 @@ I'm sorry, sports fans, I don't have the ability to provide weather updates.
 
 The model admitted that it did not know the answer 2 times, and hallucinated the first time.
 
+Q6. 
+git add ollama/
+git add commands.txt
+git commit -m "Add commentator chatbot"
+git push
+
+Q7. 
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?1 --------------------- base py  at 06:00:25 PM 
+> python3 ollama/ask_local.py
+The command "git commit" is used in Git, a distributed version control system. It is a part of the Git command-line interface (CLI) that allows developers to record changes to a project's codebase. When you use the "git commit" command, it creates a commit message and a commit history. This commit history records all the changes made to the codebase since the last commit. It helps in tracking the history of changes, making it easier to understand the evolution of the project over time.
+CompletionUsage(completion_tokens=103, prompt_tokens=36, total_tokens=139, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=0, image_tokens=None, text_tokens=None))
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main !1 ?1 --------- took 5s  base py  at 06:02:31 PM 
+> python3 ollama/ask_local.py
+Sports fans, I'm sorry, I do not know the answer.
+CompletionUsage(completion_tokens=15, prompt_tokens=105, total_tokens=120, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=3, image_tokens=None, text_tokens=None))
+
+The commentator uses more prompt tokens because its Modelfile adds a system prompt and example messages to the same user question, while the original model only see the user question.
+
+Q8. 
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main !2 ?1 ------------------ base py  at 06:03:26 PM 
+> python3 ollama/ask_json.py
+{
+  "answer": "I am sorry, I do not know the
+length
+Traceback (most recent call last):
+  File "/Users/cynthia/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03/ollama/ask_json.py", line 18, in <module>
+    print(json.loads(reply)["answer"])
+          ~~~~~~~~~~^^^^^^^
+  File "/Users/cynthia/miniforge3/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Users/cynthia/miniforge3/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/cynthia/miniforge3/lib/python3.13/json/decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 2 column 13 (char 14)
+
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main !2 ?1 ------------------ base py  at 06:06:40 PM 
+> python3 ollama/ask_json.py
+{
+  "answer": "I am sorry, I do not know the answer.",
+  "confidence": 0.8
+}
+stop
+I am sorry, I do not know the answer.
+
+It failed because of the reason: length. So I changed the line max_tokens=15 to max_tokens=150, and gave it enough length to finish the response.
+
+git add ollama/
+git add commands.txt
+
