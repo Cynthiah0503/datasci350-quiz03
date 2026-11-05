@@ -196,6 +196,6 @@ AI disclosure:
 I used ChatGPT to help me check my commands, fix errors, and improve my written answers in Tasks 1–15.
 
 Example prompt:
-"What does chmod 400 mean? Is it like user permission?" but I usually use Chinese to aks questions, this is a translation. 
+"What does chmod 400 mean? Is it like user permission?" but I usually use Chinese to aks questions, this is a translation.
 
 No AI agent ran commands for me. I ran all commands myself.
