@@ -1,0 +1,104 @@
+touch commands.txt
+ollama pull granite4:350m
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?1 --------------------- base py  at 05:34:21 PM 
+> ollama show granite4:350m
+  Model
+    architecture        granite    
+    parameters          352.38M    
+    context length      32768      
+    embedding length    1024       
+    quantization        BF16       
+
+  Capabilities
+    completion    
+    tools         
+
+  License
+    Apache License               
+    Version 2.0, January 2004    
+    ...                          
+
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?1 --------------------- base py  at 05:35:10 PM 
+> ollama ls
+NAME                                                                         ID              SIZE      MODIFIED           
+granite4:350m                                                                5eee845b49c4    708 MB    About a minute ago    
+embeddinggemma:latest                                                        3a2d262bdb75    621 MB    11 days ago           
+embeddinggemma:latest                                                        82f094e4c0e1    621 MB    11 days ago           
+llamacpp:82f094e4c0e19bc4208c692996d4f1ecf14e82a8dee579ee1d2ca1175260058e    82f094e4c0e1    621 MB    11 days ago           
+sorter-hot:latest                                                            a812ee39ad42    1.3 GB    2 weeks ago           
+sorter:latest                                                                ed781b146be4    1.3 GB    2 weeks ago           
+bio-professor:latest                                                         60c51370fa3f    1.3 GB    2 weeks ago           
+llama3.2:1b                                                                  baf6a787fdff    1.3 GB    4 weeks ago           
+
+
+Size prediction:
+Predicted size = 352.38M × 16 / 8 = 704.76 MB
+Actual size = 708 MB
+
+Maybe the small difference is due to additional model data and metadata.
+
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?1 --------------------- base py  at 05:35:17 PM 
+> touch ollama/Modelfile
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?3 --------------------- base py  at 05:40:06 PM 
+> ollama create commentator -f/Users/cynthia/Desktop/Emory/大三上26\ fall/datasci\ 350/datasci350-quiz03/ollama/Modelfile
+gathering model components 
+using existing layer sha256:431e956cac90a7e4d36a9b37bb086c413491c598bb51f90ada8e0c75d0219645 
+using existing layer sha256:0f6ec9740c765c3fb0dc38fe25f4d283c3bc1ede32b76f81c3a971daef20f76c 
+using existing layer sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30 
+creating new layer sha256:ad78f42f7c1a952859895852a4f99e1038f7e0a8b5964bdfa61d4eaa6fcfcc20 
+using existing layer sha256:2dcaf84fc5b358793d9451b614605bcb5fec302c14166644fd77e3503ca5dcf4 
+writing manifest 
+success 
+
+This command downloads nothing because the base model granite4:350m is already downloaded on my computer.
+
+
+
+Q4. 
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?3 --------------------- base py  at 05:45:02 PM 
+> ollama run commentator "What does git commit do?"
+Sports fans, I'm here to explain what git commit does.
+
+
+the "sports fans" held, and the answer was only 1 sentence. and the so on air does not apply
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?3 --------------------- base py  at 05:48:00 PM 
+> ollama run commentator "What is the weather in Atlanta right now?"
+I'm sorry, but as an AI, I don't have real-time capabilities to provide current weather information.
+The show went off the air, and the "sports fans" did not apply, and the 4 sentences were held. 
+
+
+Q5. 
+> ollama create commentator -f ollama/Modelfile
+gathering model components 
+using existing layer sha256:431e956cac90a7e4d36a9b37bb086c413491c598bb51f90ada8e0c75d0219645 
+using existing layer sha256:0f6ec9740c765c3fb0dc38fe25f4d283c3bc1ede32b76f81c3a971daef20f76c 
+using existing layer sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30 
+using existing layer sha256:ad78f42f7c1a952859895852a4f99e1038f7e0a8b5964bdfa61d4eaa6fcfcc20 
+creating new layer sha256:b3e0bd90c507ab27dddaa5bb64704f59c52318152cc2d4d655b832cbe09d73c7 
+creating new layer sha256:815586224bf7b2e47fabbf8c3a89d33656474fef1aa24c32796413af42cf71ec 
+writing manifest 
+success 
+
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?3 --------------------- base py  at 05:55:27 PM 
+> ollama run commentator "What is the weather in Atlanta right now?"
+Sports fans, the current weather in Atlanta is partly cloudy with a high of 75 degrees Fahrenheit.
+
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?3 --------------------- base py  at 05:56:25 PM 
+> ollama run commentator "What is the weather in Atlanta right now?"
+Sports fans, I'm sorry, I do not know the weather.
+
+
+ ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?3 --------------------- base py  at 05:56:30 PM 
+> ollama run commentator "What is the weather in Atlanta right now?"
+I'm sorry, sports fans, I don't have the ability to provide weather updates.
+
+The model admitted that it did not know the answer 2 times, and hallucinated the first time.
+
