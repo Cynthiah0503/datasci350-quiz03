@@ -70,7 +70,7 @@ the "sports fans" held, and the answer was only 1 sentence. and the so on air do
  ~/Desktop/Emory/大三上26 fall/datasci 350/datasci350-quiz03  on main ?3 --------------------- base py  at 05:48:00 PM 
 > ollama run commentator "What is the weather in Atlanta right now?"
 I'm sorry, but as an AI, I don't have real-time capabilities to provide current weather information.
-The show went off the air, and the "sports fans" did not apply, and the 4 sentences were held. 
+The show went off the air, and the "sports fans" broke, and the 4 sentences were held. 
 
 
 Q5. 
@@ -161,6 +161,7 @@ git add commands.txt
 git commit -m "Add Python calls"
 git push
 
+
 Q10. 
 
 chmod 400 ../ds350.pem
@@ -179,13 +180,17 @@ Q12.
 cd ~/Desktop/Emory/"大三上26 fall"/"datasci 350"/datasci350-quiz03
 scp -i "/Users/cynthia/Desktop/Emory/大三上26 fall/datasci 350/ds350.pem" aws/traffic_analysis.py aws/website_traffic.txt ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~
 
+Q13.
+
+python3 traffic_analysis.py > results.txt
+cat /var/lib/cloud/data/instance-id >> results.txt
+sha256sum results.txt > fingerprint.txt
 
 Q14. 
-scp -i "/Users/cynthia/Desktop/Emory/大三上26 fall/datasci 350/ds350.pem" ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~/results.txt ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~/fingerprint.txt ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~/traffic_analysis.png aws/
+> scp -i "/Users/cynthia/Desktop/Emory/大三上26 fall/datasci 350/ds350.pem" ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~/results.txt ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~/fingerprint.txt ubuntu@ec2-18-222-59-134.us-east-2.compute.amazonaws.com:~/traffic_analysis.png aws/
 results.txt                                                                           100%  291     4.6KB/s   00:00    
 fingerprint.txt                                                                       100%   78     1.2KB/s   00:00    
-traffic_analysis.png              
-
+traffic_analysis.png                                                                  100%   87KB 600.2KB/s   00:00 
 
 Q15. 
 When I stop an EC2 instance, I no longer pay for it to run, but there is still a storage charge. So when I finish the analysis, I should terminate it.
